@@ -26,5 +26,9 @@ Various Machine Learning Classifiers where used to form an ensemble and these in
 - Random Forest Classifier
 - XGBoost Classifier
 
+Attached below is the web page screenshot for the model.
+![image](https://github.com/KyobeDerrickSteven/Heart-Disease-Prediction/assets/118764834/e27c50b2-1c9f-46aa-a1a9-889a3947be5b)
+
+
 The results indicated that the Bagging Ensemble model outperformed its counter parts that is the Unbagged/ Normal classfiers and Bagged single classifiers with an accuracy of 89%, F1-score of 90% and Specificity of 90%.
 
