@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+
+  <body>
+    <div id="container">
+      <div id="main">
+        <div class="top_header">
+          <h1>Heart Disease Prediciton</h1>
+          <p>
+            Ensemble Model built using Bagging Classifer for the worst case
+            scenario results
+          </p>
+          <p>Model Accuracy of Ensemble - <strong>89%</strong></p>
+          <h4>Models used to build the Ensemble</h4>
+          <ul>
+            <li>Random Forest Classifier</li>
+            <li>XG Boost Classifier</li>
+            <li>Support Vector Classifier</li>
+            <li>Decision Tree Classifier</li>
+          </ul>
+        </div>
+
+         <div class="the_middle">
+            <div class="my_predict">
+              <h1>Prediction</h1>
+
+              {% if prediction==1 %}
+              <h4>Sick: <span class="danger" >Oops! You HAVE chances of Heart Disease.</span></h4>
+
+              {% elif prediction==0 %}
+              <h4>
+                Normal:
+                <span class="safe">Great! You DON'T have chances of Heart Disease.</span>
+              </h4>
+
+              {% endif %}
+              <br />
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <!--footer-->
+    <footer id="the_footer">
+      <p>Developed by Kyobe Derrick Steven</p>
+      <p>Bsc Computer Science(Artificial Intelligence)</p>
+      <p>Final Year Project 2023/24</p>
+      <p>Brunel University London</p>
+    </footer>
+  </body>
+</html>

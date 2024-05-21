@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heart Disease Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+
+    <script
+      src="https://kit.fontawesome.com/aa85f8b218.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div id="container">
+      <div id="main">
+        <!-- <div class="this_header"> -->
+        <div class="top_header">
+          <h1>Heart Disease Prediciton</h1>
+          <p>
+            Ensemble Model built using Bagging Classifer for the worst case
+            scenario results
+          </p>
+          <p>Model Accuracy of Ensemble - <strong>89%</strong></p>
+          <h4>Models used to build the Ensemble</h4>
+          <ul>
+            <li>Random Forest Classifier</li>
+            <li>XG Boost Classifier</li>
+            <li>Support Vector Classifier</li>
+            <li>Decision Tree Classifier</li>
+          </ul>
+        </div>
+
+        <div class="main_section">
+          <div class="this_container">
+            <form action="{{ url_for('predict')}}" method="POST">
+              <div class="div_section">
+                <div>
+                  <label class="my_labels" for="Age">Age</label>
+                  <input
+                    type="text"
+                    id="Age"
+                    name="Age"
+                    placeholder="Age (years)"
+                    required
+                  /><br />
+
+                  <label class="my_labels" for="Sex">Sex</label>
+                  <select id="Sex" name="Sex" >
+                    <option selected>Select Option</option>
+                    <option value="1">Male   (1)</option>
+                    <option value="0">Female (0)</option></select
+                  ><br />
+
+                  <label class="my_labels" for="ChestPainType"
+                    >ChestPainType</label>
+                  <select id="ChestPainType"  name="ChestPainType">
+                    <option selected>Select Option</option>
+                    <option value="0">ASY (0)</option>
+                    <option value="1">ATA (1)</option>
+                    <option value="2">NAP (2)</option>
+                    <option value="3">TA  (3)</option></select
+                  ><br />
+
+                  <label class="my_labels" for="Cholesterol">Cholesterol</label>
+                  <input
+                    type="text"
+                    id="Cholesterol"
+                    name="Cholesterol"
+                    placeholder="A number in range [120-430] mm/dl"
+                    required
+                  /><br />
+
+                  <label class="my_labels" for="FastingBS"
+                    >Fasting Blood Sugar</label
+                  >
+                  <select id="FastingBS"  name="FastingBS">
+                    <option selected>Select Option</option>
+                    <option value="1">Greater than 120 mg/dl - 1</option>
+                    <option value="0">Less than 120 mg/dl - 0</option></select
+                  ><br />
+                </div>
+                <div>
+                  <label class="my_labels" for="MaxHR">MaxHR</label>
+                  <input
+                    type="text"
+                    id="MaxHR"
+                    name="MaxHR"
+                    placeholder="Numerical value between [60-202]"
+                    required
+                  /><br />
+
+                  <label class="my_labels" for="ExerciseAngina"
+                    >Excercise Induced Angina</label
+                  >
+                  <select id="ExerciseAngina"  name="ExerciseAngina">
+                    <option selected>Select Option</option>
+                    <option value="0">NO  (0)</option>
+                    <option value="1">YES (1)</option></select
+                  ><br />
+
+                  <label class="my_labels" for="Oldpeak">Oldpeak</label>
+                  <input
+                    type="text"
+                    id="Oldpeak"
+                    name="Oldpeak"
+                    placeholder="Numerical Float between [-2.6 to 6.2]"
+                    required
+                  /><br />
+
+                  <label class="my_labels" for="ST_Slope">ST_Slope</label>
+                  <select id="ST_Slope"  name="ST_Slope">
+                    <option selected>Select Option</option>
+                    <option value="0">Down  (0)</option>
+                    <option value="1">Flat  (1)</option>
+                    <option value="2">Up    (2)</option></select
+                  ><br />
+                </div>
+              </div>
+              <div>
+                  <input class="my_btn" type="submit" value="predict">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--footer-->
+    <footer id="the_footer">
+      <p>Developed by Kyobe Derrick Steven</p>
+      <p>Bsc Computer Science(Artificial Intelligence)</p>
+      <p>Final Year Project 2023/24</p>
+      <p>Brunel University London</p>
+    </footer>
+  </body>
+</html>
